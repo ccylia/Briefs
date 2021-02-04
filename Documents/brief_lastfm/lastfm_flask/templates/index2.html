@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reco-Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+</head>
+
+<body>
+
+   <h1>Recommandation Artiste</h1>
+   <h3> Sélection des artistes:  </h3>
+  
+
+  <form method="POST" action="/page2" > 
+        <label for="selected_artist">Choose your favorite Artist:</label>
+
+ <select name="selectedArtist" id="selected_artist" multiple = 'true' >
+    <option value="">Please Choose your Favorite Artist</option>
+
+    {% for i in artist_name %}
+   <option value={{ i }} >{{ i }}</option>
+    
+    {% endfor %}
+
+ </select>
+
+
+<input type="submit" value="Recherche">
+    </form>
+
+
+
+
+  
+
+
+</body>
+  
+</html>
+
